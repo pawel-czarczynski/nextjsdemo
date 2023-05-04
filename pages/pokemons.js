@@ -27,7 +27,7 @@ export async function getServerSideProps(context) {
     // const response = await fetch(url)
     // const data = await response.json()
     // console.log("pokemon", pokemons)
-    const response = await fetch("http://127.0.0.1:8000/pokemon")
+    const response = await fetch("https://pokedexapi-93d8.onrender.com/pokemon")
     const data = await response.json()
   
   

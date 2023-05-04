@@ -35,7 +35,7 @@ export default function PokemonPage({details}) {
 export async function getServerSideProps(context){
  // console.log("context", context.params)
   const pokemonName =  context.params.pokemonname
-  const response = await fetch(`http://127.0.0.1:8000/pokemon/${pokemonName}`)
+  const response = await fetch(`https://pokedexapi-93d8.onrender.com/pokemon/${pokemonName}`)
   let data = await response.json()
 
   const externalUrl = ` https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}` 
