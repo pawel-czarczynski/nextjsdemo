@@ -90,7 +90,7 @@ export default function PokemonList({ pokemons }) {
         <button onClick={()=> filterType('ground') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['ground']}`}>Ground</button>
         <button onClick={()=> filterType('fairy') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['fairy']}`}>Fairy</button>
         <button onClick={()=> filterType('fighting') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['fighting']}`}>Fighting</button>
-        <button onClick={()=> filterType('psychic') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['psychic']}`}>Psyhic</button>
+        <button onClick={()=> filterType('psychic') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['psychic']}`}>Psychic</button>
         <button onClick={()=> filterType('rock') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['rock']}`}>Rock</button>
         <button onClick={()=> filterType('ghost') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['ghost']}`}>Ghost</button>
         <button onClick={()=> filterType('ice') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-900 rounded ${colorMap['ice']}`}>Ice</button>
