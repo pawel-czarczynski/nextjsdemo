@@ -31,18 +31,7 @@ export default function Paging({ itemsPerPage, totalItems, currentPage, setCurre
           </button>
         </li>
         <li className="p-1 px-3 m-1 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-gray-900 rounded">{currentPage} / {pageNumbers.length}</li>
-        {/* {pageNumbers.map((pageNumber) => (
-          <li key={pageNumber}>
-            <a
-              href="#"
-              className="p-1 px-3 m-1 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-gray-900 rounded"
-              onClick={(event) => handleClick(event, pageNumber)}
-            >
-              {pageNumber}
-            </a>
-          </li>
-        ))} */}
-         <li>
+        <li>
           <button
             className="p-1 px-3 m-1 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-gray-900 rounded"
             disabled={currentPage === pageNumbers.length}
