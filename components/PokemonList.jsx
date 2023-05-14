@@ -59,7 +59,7 @@ export default function PokemonList({ pokemons }) {
   const itemsPerPage = 20;
 
   const filterType = (type) => {
-    const filtered = type ? pokemons.filter((item) => item.type1 === type) : pokemons;
+    const filtered = type ? pokemons.filter((item) => (item.type1 === type || item.type2 === type)) : pokemons;
     setFilteredPokemons(filtered);
     setCurrentPage(1); // reset to first page when filter changes
   };
