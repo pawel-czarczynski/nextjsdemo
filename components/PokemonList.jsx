@@ -56,7 +56,10 @@ function PokemonListItem({ pokemon }) {
 export default function PokemonList({ pokemons }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredPokemons, setFilteredPokemons] = useState(pokemons);
+  const [searchValue, setSearchValue] = useState('');
   const itemsPerPage = 20;
+
+  
 
   const filterType = (type) => {
     const filtered = type ? pokemons.filter((item) => (item.type1 === type || item.type2 === type)) : pokemons;
@@ -68,7 +71,19 @@ export default function PokemonList({ pokemons }) {
     setFilteredPokemons(filtered);
     setCurrentPage(1); // reset to first page when filter changes
   };
+  const filterSearch = (searchValue) => {
+    const filtered = searchValue ? pokemons.filter((item) => (item.name.toLowerCase().includes(searchValue.toLowerCase()))) : pokemons;
+    console.log(searchValue);
+    setFilteredPokemons(filtered);
+    setCurrentPage(1); // reset to first page when filter changes
+    setSearchValue('');
+  };
   
+  function clearInput() {
+    document.getElementById("searchInput").value = "";
+    filterType('')
+  }
+
   // Calculate the index of the first and last item to display on the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -76,8 +91,11 @@ export default function PokemonList({ pokemons }) {
   return (
     <div className="flex justify-center flex-col items-center">
       <div className="grid grid-cols-2 grid-rows-1 mb-2">
+      <input id='searchInput' className="p-2 w-36 h-8 m-2 text-black bg-gray-500 rounded-lg" type='text' value='...search...' onChange={e => filterSearch(e.target.value)}></input>
+        <button onClick={()=> clearInput() } className='w-24 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-800 rounded bg-gray-300'>Clear</button>
         <button onClick={()=> filterType('') } className='w-24 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-800 rounded bg-gray-300'>All</button>
         <button onClick={()=> filterLegendary() } className='w-24 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-800 rounded bg-amber-400'>Legendary</button>
+        
       </div>
       <div className="grid grid-cols-3 lg:grid-cols-9 md:grid-cols-6 grid-rows-6 lg:grid-rows-2 md:grid-rows-3">      
         <button onClick={()=> filterType('fire') } className={`w-16 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-50 rounded ${colorMap['fire']}`}>Fire</button>
