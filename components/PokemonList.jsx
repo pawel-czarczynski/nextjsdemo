@@ -91,7 +91,7 @@ export default function PokemonList({ pokemons }) {
   return (
     <div className="flex justify-center flex-col items-center">
       <div className="grid grid-cols-2 grid-rows-1 mb-2">
-      <input id='searchInput' className="p-2 w-36 h-8 m-2 text-black bg-gray-500 rounded-lg" type='text' value='...search...' onChange={e => filterSearch(e.target.value)}></input>
+      <input id='searchInput' className="p-2 w-36 h-8 m-2 text-black bg-gray-500 rounded-lg" type='text' onChange={e => filterSearch(e.target.value)}></input>
         <button onClick={()=> clearInput() } className='w-24 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-800 rounded bg-gray-300'>Clear</button>
         <button onClick={()=> filterType('') } className='w-24 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-800 rounded bg-gray-300'>All</button>
         <button onClick={()=> filterLegendary() } className='w-24 m-2 hover:shadow-lg hover:shadow-gray-500 text-gray-800 rounded bg-amber-400'>Legendary</button>
