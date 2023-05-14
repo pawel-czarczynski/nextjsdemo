@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 
 export default function Paging({ itemsPerPage, totalItems, currentPage, setCurrentPage }) {
   const pageNumbers = [];
@@ -35,9 +35,8 @@ export default function Paging({ itemsPerPage, totalItems, currentPage, setCurre
           <button
             className="p-1 px-3 m-1 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-gray-900 rounded"
             disabled={currentPage === pageNumbers.length}
-            onClick={(event) => handleClick(event, currentPage + 1)}
-          >
-            Next
+            onClick={(event) => handleClick(event, currentPage + 1)}>
+              Next
           </button>
         </li>
       </ul>

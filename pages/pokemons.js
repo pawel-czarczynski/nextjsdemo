@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import PokemonList from '@/components/PokemonList'
 import TitleComponent from '@/components/TitleComponent'
