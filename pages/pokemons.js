@@ -29,7 +29,7 @@ export default function Pokemons({ pokemonsList }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const response = await fetch('https://pokedexapi-93d8.onrender.com/pokemon/')
   const data = await response.json()
 
